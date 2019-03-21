@@ -1,0 +1,24 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+\usepackage{mptikz}
+\begin{document}
+
+\begin{tikzpicture}
+  \tensorstyle{{len_vertical_legs=0.25, tensor_style='draw, fill=orange, rounded corners=0.1cm'}}
+  \mpa{3}{{E=1, W=1, S=0, y=0, tensor_name='A'}}
+  \node at (A_1) {$i-1$};
+  \node at (A_2) {$i$};
+  \node at (A_3) {$i+1$};
+  
+  \tensorstyle{{len_vertical_legs=0.25, tensor_style='draw, fill=green, rounded corners=0.1cm'}}
+  \mpa{3}{{E=1, W=1, N=0, y=-1.5, tensor_name='B'}}
+  % Draw MPA manually
+  %\tensor{{N=1, S=0, W=0, E=0, x=0, y = -1.5, tensor_name='B_1'}}
+  %\tensor{{N=1, S=0, W=0, E=0, x=1.5, y = -1.5, tensor_name='B_2'}}
+  %\tensor{{N=1, S=0, W=0, E=0, x=3.0, y = -1.5, tensor_name='B_3'}}
+  \node at (B_1) {$i-1$};
+  \node at (B_2) {$i$};
+  \node at (B_3) {$i+1$};
+\end{tikzpicture}
+
+\end{document}
